@@ -13,7 +13,7 @@ $(ALL): %: clone-% %/configure
 	cd $@/build && $(MAKE) install
 
 clean-%:
-	cd $*/build && make clean
+	cd $*/build && $(MAKE) clean
 
 clone-%:
 	test -d $* || git clone $(REPO)/$*
